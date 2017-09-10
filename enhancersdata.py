@@ -64,6 +64,13 @@ class EnhancersData:
             end = self._index_in_epoch
             return self._seqs[start:end], self._labels[start:end]
 
+        def single_pass_batch_iter(self, batch_size):
+            start = 0
+            while start < self._num_examples:
+                x_batch, y_batch = self._seqs[start:start+batch_size], self._labels[start:start+batch_size]
+                start += batch_size
+                yield x_batch, y_batch
+
     def __init__(self, dataset_folder):
         self.train = self.SeqDataSet(dataset_folder, "train")
         self.validation = self.SeqDataSet(dataset_folder, "validation")

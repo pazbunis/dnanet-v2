@@ -79,9 +79,9 @@ def run_experiment(general_cfg, seed):
     ds = EnhancersData(data_dir_path)
     log_files(data_dir_path)
 
-    x = tf.placeholder(tf.float32, shape=[None, 4, 1000])
-    y_ = tf.placeholder(tf.uint8, shape=[None, 2])
-    keep_prob = tf.placeholder(tf.float32)
+    x = tf.placeholder(tf.float32, shape=[None, 4, 1000], name="x")
+    y_ = tf.placeholder(tf.uint8, shape=[None, 2], name="y_")
+    keep_prob = tf.placeholder(tf.float32, name="keep_prob")
 
     y_conv = CNN(x, dropout_keep_prob=keep_prob)
 
@@ -92,14 +92,13 @@ def run_experiment(general_cfg, seed):
     with tf.control_dependencies(update_ops):
         train_step = tf.train.AdamOptimizer().minimize(cross_entropy)
 
-    y_pred_sig = tf.sigmoid(y_conv)
+    y_pred_sig = tf.sigmoid(y_conv, name="sigmoid_out")
     correct_prediction = tf.equal(tf.argmax(y_, 1), tf.argmax(y_pred_sig, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
     num_runs = general_cfg["num_runs"]
     num_epochs = general_cfg["num_epochs"]
     mini_batch_size = general_cfg["batch_size"]
-    iters_per_epoch = int(ds.train.num_examples / mini_batch_size)
 
     for var in tf.trainable_variables():
         tf.summary.histogram(var.name, var)
