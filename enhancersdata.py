@@ -1,11 +1,14 @@
 import numpy as np
 from os.path import join
+
+
 class EnhancersData:
+
     class SeqDataSet:
         def __init__(self, dataset_folder, suffix):
-            X_path = join(dataset_folder, 'X_bin_', suffix, '.npy')
-            y_path = join(dataset_folder, 'Y_bin_', suffix, '.npy')
-            headers_path = join(dataset_folder, 'headers_', suffix, '.npy')
+            X_path = join(dataset_folder, 'X_bin_' + suffix + '.npy')
+            y_path = join(dataset_folder, 'Y_bin_' + suffix + '.npy')
+            headers_path = join(dataset_folder, 'headers_' + suffix + '.npy')
             self._headers = np.load(headers_path)
             self._num_examples = len(self._headers)
             # un-compress data
@@ -14,14 +17,26 @@ class EnhancersData:
             self._seqs = np.reshape(Xrec, [self._num_examples, 4, 1000])
             y_bin = np.load(y_path)
             yrec = np.unpackbits(y_bin)
-            
+            yrec = yrec[:self._num_examples]  # this takes care of padding bits at the end
             self._labels = np.zeros((self._num_examples, 2))
             self._labels[np.arange(self._num_examples), yrec] = 1
             
             # init
             self._epochs_completed = 0
             self._index_in_epoch = 0
-            
+
+        @property
+        def seqs(self):
+            return self._seqs
+
+        @property
+        def labels(self):
+            return self._labels
+
+        @property
+        def headers(self):
+            return self._headers
+
         @property
         def num_examples(self):
             return self._num_examples
@@ -49,10 +64,7 @@ class EnhancersData:
           end = self._index_in_epoch
           return self._seqs[start:end], self._labels[start:end]
 
-
     def __init__(self, dataset_folder):
-        self.train = SeqDataSet(dataset_folder, "train")
-        self.validation = SeqDataSet(dataset_folder, "validation")
-        self.test = SeqDataSet(dataset_folder, "test")
-
-        
+        self.train = self.SeqDataSet(dataset_folder, "train")
+        self.validation = self.SeqDataSet(dataset_folder, "validation")
+        self.test = self.SeqDataSet(dataset_folder, "test")
