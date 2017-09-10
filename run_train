@@ -1,4 +1,4 @@
 #!/bin/csh
 module load tensorflow
-cd /cs/grad/pazbu/paz/dev/projects/trainHueristic
-/cs/grad/pazbu/paz/dev/python3.5+tf1+gpu/bin/python ~/proj/trainHueristic/train.py
+cd /cs/grad/pazbu/paz/dev/projects/dnanet-v2
+/cs/grad/pazbu/paz/dev/python3.5+tf1+gpu/bin/python train.py

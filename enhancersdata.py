@@ -46,23 +46,23 @@ class EnhancersData:
             return self._epochs_completed
     
         def next_batch(self, batch_size):
-          """Return the next `batch_size` examples from this data set."""
-          start = self._index_in_epoch
-          self._index_in_epoch += batch_size
-          if self._index_in_epoch > self._num_examples:
-              # Finished epoch
-              self._epochs_completed += 1
-              # Shuffle the data
-              perm = np.arange(self._num_examples)
-              np.random.shuffle(perm)
-              self._seqs = self._seqs[perm]
-              self._labels = self._labels[perm]
-              # Start next epoch
-              start = 0
-              self._index_in_epoch = batch_size
-              assert batch_size <= self._num_examples
-          end = self._index_in_epoch
-          return self._seqs[start:end], self._labels[start:end]
+            """Return the next `batch_size` examples from this data set."""
+            start = self._index_in_epoch
+            self._index_in_epoch += batch_size
+            if self._index_in_epoch > self._num_examples:
+                # Finished epoch
+                self._epochs_completed += 1
+                # Shuffle the data
+                perm = np.arange(self._num_examples)
+                np.random.shuffle(perm)
+                self._seqs = self._seqs[perm]
+                self._labels = self._labels[perm]
+                # Start next epoch
+                start = 0
+                self._index_in_epoch = batch_size
+                assert batch_size <= self._num_examples
+            end = self._index_in_epoch
+            return self._seqs[start:end], self._labels[start:end]
 
     def __init__(self, dataset_folder):
         self.train = self.SeqDataSet(dataset_folder, "train")

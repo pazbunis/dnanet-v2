@@ -15,7 +15,8 @@ def general_config():
                     "seq_length": 1000,
                     "num_outs": 2,
                     "batch_size": 100,
-                    "num_epochs": 40
+                    "num_runs": 1,
+                    "num_epochs": 1
                     }
 
 @ex.config
@@ -26,11 +27,12 @@ def cnn_config():
     pool1_cfg = {"kernel_size": 10, "stride": 10}
     pool2_cfg = {"kernel_size": 3, "stride": 3}
     pool3_cfg = {"kernel_size": 3, "stride": 3}
+    dense1_cfg = {"size": 100}
     dropout_keep_prob = 0.5
 
 # model
 @ex.capture
-def CNN(x, general_cfg, conv1_cfg, conv2_cfg, conv3_cfg, pool1_cfg, pool2_cfg, pool3_cfg, dropout_keep_prob):
+def CNN(x, general_cfg, conv1_cfg, conv2_cfg, conv3_cfg, pool1_cfg, pool2_cfg, pool3_cfg, dense1_cfg, dropout_keep_prob):
     x_seq = tf.reshape(x, [-1, 4, 1000, 1])
     conv1 = tf.layers.conv2d(inputs=x_seq, filters=conv1_cfg["num_filters"], kernel_size=conv1_cfg["filter_size"],
                              activation=tf.nn.relu,
@@ -56,17 +58,18 @@ def CNN(x, general_cfg, conv1_cfg, conv2_cfg, conv3_cfg, pool1_cfg, pool2_cfg, p
     # two affine (fully-connected) layers with dropout in between
     dropout = tf.nn.dropout(conv3_flat, keep_prob=dropout_keep_prob)
 
-    aff1 = tf.layers.dense(dropout, 100, activation=tf.nn.relu, name="affine1")
+    dense1 = tf.layers.dense(dropout, dense1_cfg["size"], activation=tf.nn.relu, name="dense1")
     #        aff2 = tf.layers.dense(aff1, , activation=tf.nn.relu, name="affine2")
     # output layer
-    aff_out = tf.layers.dense(aff1, general_cfg["num_outs"], activation=None, name="affine_out")
+    dense_out = tf.layers.dense(dense1, general_cfg["num_outs"], activation=None, name="dense_out")
     # we're returning the unscaled output so we can use the safe: tf.nn.softmax_cross_entropy_with_logits
-    return aff_out
+    return dense_out
 
 
 def log_files(dir_path):
     for filename in listdir(dir_path):
         ex.add_resource(path.join(dir_path, filename))
+
 
 @ex.automain
 def run_experiment(general_cfg, seed):
@@ -84,6 +87,7 @@ def run_experiment(general_cfg, seed):
 
     cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y_conv)
 
+    # attach update ops used for the batch normalization
     update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
     with tf.control_dependencies(update_ops):
         train_step = tf.train.AdamOptimizer().minimize(cross_entropy)
@@ -92,7 +96,7 @@ def run_experiment(general_cfg, seed):
     correct_prediction = tf.equal(tf.argmax(y_, 1), tf.argmax(y_pred_sig, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-    num_runs = 2
+    num_runs = general_cfg["num_runs"]
     num_epochs = general_cfg["num_epochs"]
     mini_batch_size = general_cfg["batch_size"]
     iters_per_epoch = int(ds.train.num_examples / mini_batch_size)
@@ -101,20 +105,23 @@ def run_experiment(general_cfg, seed):
         tf.summary.histogram(var.name, var)
     merged_summary_op = tf.summary.merge_all()
 
+    saver = tf.train.Saver()
     with tf.Session() as sess:
         for run_idx in range(num_runs):
             sess.run(tf.global_variables_initializer())
             summary_writer = tf.summary.FileWriter("/cs/grad/pazbu/paz/dev/projects/dnanet-v2/summaries", graph=sess.graph)
-            for epoch_idx in range(num_epochs):
-                for iter_idx in range(iters_per_epoch):
-                    batch = ds.train.next_batch(mini_batch_size)
-                    if iter_idx % 100 == 0:
-                        train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-                        valid_accuracy = accuracy.eval(feed_dict={x: ds.validation.seqs,
-                                                                  y_: ds.validation.labels,
-                                                                  keep_prob: 1.0})
-                        print('run: %d, epoch: %d, iteration: %d, train accuracy: %g, validation accuracy: %g' %
-                              (run_idx, epoch_idx, iter_idx, train_accuracy, valid_accuracy))
-                    summary_str, _ = sess.run([merged_summary_op, train_step], feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
-                    summary_writer.add_summary(summary_str, iters_per_epoch*epoch_idx + iter_idx)
-            print('test accuracy %g' % accuracy.eval(feed_dict={x: ds.test.seqs, y_: ds.test.labels, keep_prob: 1.0}))
+            current_step = 0
+            while ds.train.epochs_completed < num_epochs:
+                current_step += 1
+                batch = ds.train.next_batch(mini_batch_size)
+                if current_step % 100 == 0:
+                    train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
+                    valid_accuracy = accuracy.eval(feed_dict={x: ds.validation.seqs,
+                                                              y_: ds.validation.labels,
+                                                              keep_prob: 1.0})
+                    saver.save(sess, save_path='chk', global_step=current_step)
+                    print('run: %d, epoch: %d, iteration: %d, train accuracy: %g, validation accuracy: %g' %
+                          (run_idx, ds.train.epochs_completed, current_step, train_accuracy, valid_accuracy))
+                summary_str, _ = sess.run([merged_summary_op, train_step], feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
+                summary_writer.add_summary(summary_str, current_step)
+            # print('test accuracy %g' % accuracy.eval(feed_dict={x: ds.test.seqs, y_: ds.test.labels, keep_prob: 1.0}))
