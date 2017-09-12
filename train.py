@@ -15,13 +15,13 @@ def general_config():
                     "seq_length": 1000,
                     "num_outs": 2,
                     "batch_size": 100,
-                    "num_runs": 1,
-                    "num_epochs": 1
+                    "num_runs": 25,
+                    "num_epochs": 60
                     }
 
 @ex.config
 def cnn_config():
-    conv1_cfg = {"num_filters": 32, "filter_size": [4, 15]}
+    conv1_cfg = {"num_filters": 64, "filter_size": [4, 15]}
     conv2_cfg = {"num_filters": 32, "filter_size": [1, 5]}
     conv3_cfg = {"num_filters": 32, "filter_size": [1, 5]}
     pool1_cfg = {"kernel_size": 10, "stride": 10}
@@ -41,8 +41,8 @@ def CNN(x, general_cfg, conv1_cfg, conv2_cfg, conv3_cfg, pool1_cfg, pool2_cfg, p
     max_pool1 = tf.nn.max_pool(conv1, ksize=[1, 1, pool1_cfg["kernel_size"], 1],
                                strides=[1, 1, pool1_cfg["stride"], 1], padding='VALID')
     # conv2
-    bn1 = tf.layers.batch_normalization(max_pool1)
-    conv2 = tf.layers.conv2d(inputs=bn1, filters=conv2_cfg["num_filters"], kernel_size=conv2_cfg["filter_size"],
+    # bn1 = tf.layers.batch_normalization(max_pool1)
+    conv2 = tf.layers.conv2d(inputs=max_pool1, filters=conv2_cfg["num_filters"], kernel_size=conv2_cfg["filter_size"],
                              activation=tf.nn.relu,
                              kernel_initializer=tf.contrib.layers.xavier_initializer(), name="conv2")
     max_pool2 = tf.nn.max_pool(conv2, ksize=[1, 1, pool2_cfg["kernel_size"], 1],
@@ -105,6 +105,7 @@ def run_experiment(general_cfg, seed):
     merged_summary_op = tf.summary.merge_all()
 
     saver = tf.train.Saver()
+    best_val_acc = 0
     with tf.Session() as sess:
         for run_idx in range(num_runs):
             sess.run(tf.global_variables_initializer())
@@ -115,10 +116,15 @@ def run_experiment(general_cfg, seed):
                 batch = ds.train.next_batch(mini_batch_size)
                 if current_step % 100 == 0:
                     train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-                    valid_accuracy = accuracy.eval(feed_dict={x: ds.validation.seqs,
-                                                              y_: ds.validation.labels,
-                                                              keep_prob: 1.0})
-                    saver.save(sess, save_path='chk', global_step=current_step)
+                    val_corrects = []
+                    for x_val_batch, y_val_batch in ds.validation.single_pass_batch_iter(1000):
+                        val_corrects.extend(correct_prediction.eval(feed_dict={x: x_val_batch,
+                                                                               y_: y_val_batch,
+                                                                               keep_prob: 1.0}))
+                    valid_accuracy = sum(val_corrects) / ds.validation.num_examples
+                    if best_val_acc < valid_accuracy:
+                        saver.save(sess, save_path='chk-' + str(valid_accuracy), global_step=current_step)
+                        best_val_acc = valid_accuracy
                     print('run: %d, epoch: %d, iteration: %d, train accuracy: %g, validation accuracy: %g' %
                           (run_idx, ds.train.epochs_completed, current_step, train_accuracy, valid_accuracy))
                 summary_str, _ = sess.run([merged_summary_op, train_step], feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
