@@ -1,0 +1,77 @@
+{
+  "artifacts": [],
+  "command": "run_experiment",
+  "experiment": {
+    "base_dir": "/cs/cbio/paz/dev/projects/dnanet-v2",
+    "dependencies": [
+      "numpy==1.13.1",
+      "sacred==0.7.0",
+      "tensorflow==1.2.0"
+    ],
+    "mainfile": "train.py",
+    "name": "train",
+    "repositories": [],
+    "sources": [
+      [
+        "enhancersdata.py",
+        "_sources/enhancersdata_21346ea0c0237f911553d568304f39ef.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_c4ce66c74d7981f26d316164c2c9c094.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"train.py\", line 68, in run_experiment\n    ds = EnhancersData('/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data')\n",
+    "  File \"/cs/cbio/paz/dev/projects/dnanet-v2/enhancersdata.py\", line 69, in __init__\n    self.validation = self.SeqDataSet(dataset_folder, \"validation\")\n",
+    "  File \"/cs/cbio/paz/dev/projects/dnanet-v2/enhancersdata.py\", line 18, in __init__\n    y_bin = np.load(y_path)\n",
+    "  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/numpy/lib/npyio.py\", line 370, in load\n    fid = open(file, \"rb\")\n",
+    "FileNotFoundError: [Errno 2] No such file or directory: '/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_validation.npy'\n"
+  ],
+  "heartbeat": "2017-09-10T09:31:53.742598",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz",
+    "hostname": "cortex-01",
+    "os": [
+      "Linux",
+      "Linux-4.8.4-aufs-1-x86_64-with-debian-stretch-sid"
+    ],
+    "python_version": "3.5.2+"
+  },
+  "meta": {
+    "command": "run_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2017-09-10T09:31:52.982191",
+  "status": "FAILED",
+  "stop_time": "2017-09-10T09:31:53.744991"
+}

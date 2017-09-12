@@ -1,0 +1,125 @@
+{
+  "artifacts": [],
+  "command": "run_experiment",
+  "experiment": {
+    "base_dir": "/cs/cbio/paz/dev/projects/dnanet-v2",
+    "dependencies": [
+      "numpy==1.13.1",
+      "posixpath==<unknown>",
+      "sacred==0.7.0",
+      "tensorflow==1.2.0"
+    ],
+    "mainfile": "train.py",
+    "name": "train",
+    "repositories": [],
+    "sources": [
+      [
+        "enhancersdata.py",
+        "_sources/enhancersdata_4e061912084a36006d91e1ededa93997.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_4be392091f944537b19f32afe25800e4.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1139, in _do_call\n    return fn(*args)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1121, in _run_fn\n    status, run_metadata)\n",
+    "  File \"/usr/lib64/python3.5/contextlib.py\", line 66, in __exit__\n    next(self.gen)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/errors_impl.py\", line 466, in raise_exception_on_not_ok_status\n    pywrap_tensorflow.TF_GetCode(status))\n",
+    "tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[26111,64,1,989]\n\t [[Node: conv1/convolution = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](Reshape, conv1/kernel/read)]]\n\t [[Node: Mean/_41 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_110_Mean\", tensor_type=DT_FLOAT, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"train.py\", line 121, in run_experiment\n    keep_prob: 1.0})\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 606, in eval\n    return _eval_using_default_session(self, feed_dict, self.graph, session)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 3928, in _eval_using_default_session\n    return session.run(tensors, feed_dict)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 789, in run\n    run_metadata_ptr)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 997, in _run\n    feed_dict_string, options, run_metadata)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1132, in _do_run\n    target_list, options, run_metadata)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1152, in _do_call\n    raise type(e)(node_def, op, message)\n",
+    "tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[26111,64,1,989]\n\t [[Node: conv1/convolution = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](Reshape, conv1/kernel/read)]]\n\t [[Node: Mean/_41 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_110_Mean\", tensor_type=DT_FLOAT, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n\nCaused by op 'conv1/convolution', defined at:\n  File \"train.py\", line 74, in <module>\n    @ex.automain\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 130, in automain\n    self.run_commandline()\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 242, in run_commandline\n    return self.run(cmd_name, config_updates, named_configs, {}, args)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 187, in run\n    run()\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/run.py\", line 223, in __call__\n    self.result = self.main_function(*args)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n  File \"train.py\", line 86, in run_experiment\n    y_conv = CNN(x, dropout_keep_prob=keep_prob)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n  File \"train.py\", line 39, in CNN\n    kernel_initializer=tf.contrib.layers.xavier_initializer(), name=\"conv1\")\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/layers/convolutional.py\", line 551, in conv2d\n    return layer.apply(inputs)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/layers/base.py\", line 492, in apply\n    return self.__call__(inputs, *args, **kwargs)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/layers/base.py\", line 441, in __call__\n    outputs = self.call(inputs, *args, **kwargs)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/layers/convolutional.py\", line 158, in call\n    data_format=utils.convert_data_format(self.data_format, self.rank + 2))\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/nn_ops.py\", line 670, in convolution\n    op=op)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/nn_ops.py\", line 338, in with_space_to_batch\n    return op(input, num_spatial_dims, padding)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/nn_ops.py\", line 662, in op\n    name=name)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/nn_ops.py\", line 131, in _non_atrous_convolution\n    name=name)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/gen_nn_ops.py\", line 399, in conv2d\n    data_format=data_format, name=name)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/op_def_library.py\", line 767, in apply_op\n    op_def=op_def)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 2506, in create_op\n    original_op=self._default_original_op, op_def=op_def)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 1269, in __init__\n    self._traceback = _extract_stack()\n\nResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[26111,64,1,989]\n\t [[Node: conv1/convolution = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](Reshape, conv1/kernel/read)]]\n\t [[Node: Mean/_41 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_110_Mean\", tensor_type=DT_FLOAT, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n\n"
+  ],
+  "heartbeat": "2017-09-10T15:12:41.776591",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz",
+    "hostname": "cortex-01",
+    "os": [
+      "Linux",
+      "Linux-4.8.4-aufs-1-x86_64-with-debian-stretch-sid"
+    ],
+    "python_version": "3.5.2+"
+  },
+  "meta": {
+    "command": "run_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_validation.npy",
+      "log/_resources/Y_bin_validation_b49ae5eb725fff996f3c518d66687ea9.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_test.npy",
+      "log/_resources/Y_bin_test_8d9d2ef43dba4cb18820c3dd663b77ab.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_test.npy",
+      "log/_resources/X_bin_test_e623da04be39065dcf615f51d0a0f536.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_validation.npy",
+      "log/_resources/headers_validation_973a4c8036ae3afd565e6b3130d95071.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_train.npy",
+      "log/_resources/X_bin_train_4f4dc66412df72b740f2cb1c3b99c43e.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_train.npy",
+      "log/_resources/Y_bin_train_96f1a5f56e8ea4c24e843363abd9add8.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_train.npy",
+      "log/_resources/headers_train_c69a76a3fd6a93a79e753957dd68d4e0.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_validation.npy",
+      "log/_resources/X_bin_validation_f0f9183170eecd7c97275818cf51ec9d.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_test.npy",
+      "log/_resources/headers_test_4dbe469b6a9b61a316c7cb67295bfa31.npy"
+    ]
+  ],
+  "result": null,
+  "start_time": "2017-09-10T15:12:21.175321",
+  "status": "FAILED",
+  "stop_time": "2017-09-10T15:12:41.779167"
+}

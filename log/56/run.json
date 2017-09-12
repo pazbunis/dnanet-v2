@@ -1,0 +1,125 @@
+{
+  "artifacts": [],
+  "command": "run_experiment",
+  "experiment": {
+    "base_dir": "/cs/cbio/paz/dev/projects/dnanet-v2",
+    "dependencies": [
+      "numpy==1.13.1",
+      "posixpath==<unknown>",
+      "sacred==0.7.0",
+      "tensorflow==1.2.0"
+    ],
+    "mainfile": "train.py",
+    "name": "train",
+    "repositories": [],
+    "sources": [
+      [
+        "enhancersdata.py",
+        "_sources/enhancersdata_4e061912084a36006d91e1ededa93997.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_a7ce472ea14e09d65f44735b96b3749c.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1139, in _do_call\n    return fn(*args)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1121, in _run_fn\n    status, run_metadata)\n",
+    "  File \"/usr/lib64/python3.5/contextlib.py\", line 66, in __exit__\n    next(self.gen)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/errors_impl.py\", line 466, in raise_exception_on_not_ok_status\n    pywrap_tensorflow.TF_GetCode(status))\n",
+    "tensorflow.python.framework.errors_impl.InvalidArgumentError: Input to reshape is a tensor with 4000000 values, but the requested shape has 400000\n\t [[Node: Reshape = Reshape[T=DT_FLOAT, Tshape=DT_INT32, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](_arg_x_0_1/_49, Reshape/shape)]]\n\t [[Node: Equal/_53 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_105_Equal\", tensor_type=DT_BOOL, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"train.py\", line 123, in run_experiment\n    keep_prob: 1.0}))\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 606, in eval\n    return _eval_using_default_session(self, feed_dict, self.graph, session)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 3928, in _eval_using_default_session\n    return session.run(tensors, feed_dict)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 789, in run\n    run_metadata_ptr)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 997, in _run\n    feed_dict_string, options, run_metadata)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1132, in _do_run\n    target_list, options, run_metadata)\n",
+    "  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/client/session.py\", line 1152, in _do_call\n    raise type(e)(node_def, op, message)\n",
+    "tensorflow.python.framework.errors_impl.InvalidArgumentError: Input to reshape is a tensor with 4000000 values, but the requested shape has 400000\n\t [[Node: Reshape = Reshape[T=DT_FLOAT, Tshape=DT_INT32, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](_arg_x_0_1/_49, Reshape/shape)]]\n\t [[Node: Equal/_53 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_105_Equal\", tensor_type=DT_BOOL, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n\nCaused by op 'Reshape', defined at:\n  File \"train.py\", line 74, in <module>\n    @ex.automain\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 130, in automain\n    self.run_commandline()\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 242, in run_commandline\n    return self.run(cmd_name, config_updates, named_configs, {}, args)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/experiment.py\", line 187, in run\n    run()\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/run.py\", line 223, in __call__\n    self.result = self.main_function(*args)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n  File \"train.py\", line 86, in run_experiment\n    y_conv = CNN(x, dropout_keep_prob=keep_prob)\n  File \"/cs/cbio/paz/dev/python3.5+tf1+gpu/lib/python3.5/site-packages/sacred/config/captured_function.py\", line 47, in captured_function\n    result = wrapped(*args, **kwargs)\n  File \"train.py\", line 36, in CNN\n    x_seq = tf.reshape(x, [general_cfg[\"batch_size\"], 4, 1000, 1])\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py\", line 2451, in reshape\n    name=name)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/op_def_library.py\", line 767, in apply_op\n    op_def=op_def)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 2506, in create_op\n    original_op=self._default_original_op, op_def=op_def)\n  File \"/usr/local/tensorflow/avx-avx2-gpu/1.2.0/python3.5/site-packages/tensorflow/python/framework/ops.py\", line 1269, in __init__\n    self._traceback = _extract_stack()\n\nInvalidArgumentError (see above for traceback): Input to reshape is a tensor with 4000000 values, but the requested shape has 400000\n\t [[Node: Reshape = Reshape[T=DT_FLOAT, Tshape=DT_INT32, _device=\"/job:localhost/replica:0/task:0/gpu:0\"](_arg_x_0_1/_49, Reshape/shape)]]\n\t [[Node: Equal/_53 = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/cpu:0\", send_device=\"/job:localhost/replica:0/task:0/gpu:0\", send_device_incarnation=1, tensor_name=\"edge_105_Equal\", tensor_type=DT_BOOL, _device=\"/job:localhost/replica:0/task:0/cpu:0\"]()]]\n\n"
+  ],
+  "heartbeat": "2017-09-10T15:32:28.224547",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz",
+    "hostname": "cortex-07",
+    "os": [
+      "Linux",
+      "Linux-4.8.4-aufs-1-x86_64-with-debian-stretch-sid"
+    ],
+    "python_version": "3.5.2+"
+  },
+  "meta": {
+    "command": "run_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_validation.npy",
+      "log/_resources/Y_bin_validation_b49ae5eb725fff996f3c518d66687ea9.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_test.npy",
+      "log/_resources/Y_bin_test_8d9d2ef43dba4cb18820c3dd663b77ab.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_test.npy",
+      "log/_resources/X_bin_test_e623da04be39065dcf615f51d0a0f536.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_validation.npy",
+      "log/_resources/headers_validation_973a4c8036ae3afd565e6b3130d95071.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_train.npy",
+      "log/_resources/X_bin_train_4f4dc66412df72b740f2cb1c3b99c43e.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_train.npy",
+      "log/_resources/Y_bin_train_96f1a5f56e8ea4c24e843363abd9add8.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_train.npy",
+      "log/_resources/headers_train_c69a76a3fd6a93a79e753957dd68d4e0.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_validation.npy",
+      "log/_resources/X_bin_validation_f0f9183170eecd7c97275818cf51ec9d.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_test.npy",
+      "log/_resources/headers_test_4dbe469b6a9b61a316c7cb67295bfa31.npy"
+    ]
+  ],
+  "result": null,
+  "start_time": "2017-09-10T15:32:16.784227",
+  "status": "FAILED",
+  "stop_time": "2017-09-10T15:32:28.227077"
+}

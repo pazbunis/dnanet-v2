@@ -1,0 +1,135 @@
+INFO - train - Running command 'run_experiment'
+INFO - train - Started run with ID "12"
+2017-09-10 13:03:16.890733: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla M60
+major: 5 minor: 2 memoryClockRate (GHz) 1.1775
+pciBusID 0000:87:00.0
+Total memory: 7.93GiB
+Free memory: 7.86GiB
+2017-09-10 13:03:16.890783: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-09-10 13:03:16.890791: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-09-10 13:03:16.890806: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:87:00.0)
+run, epoch, step, training accuracy, validation accuracy
+run: 0, epoch: 0, iteration: 0, train accuracy: 0.37, validation accuracy: 0.331661
+run: 0, epoch: 0, iteration: 100, train accuracy: 0.93, validation accuracy: 0.887787
+run: 0, epoch: 0, iteration: 200, train accuracy: 0.9, validation accuracy: 0.893226
+run: 0, epoch: 0, iteration: 300, train accuracy: 0.89, validation accuracy: 0.893839
+run: 0, epoch: 0, iteration: 400, train accuracy: 0.92, validation accuracy: 0.896328
+run: 0, epoch: 0, iteration: 500, train accuracy: 0.87, validation accuracy: 0.89537
+run: 0, epoch: 0, iteration: 600, train accuracy: 0.89, validation accuracy: 0.882541
+run: 0, epoch: 0, iteration: 700, train accuracy: 0.87, validation accuracy: 0.89786
+run: 0, epoch: 0, iteration: 800, train accuracy: 0.93, validation accuracy: 0.874843
+run: 0, epoch: 0, iteration: 900, train accuracy: 0.86, validation accuracy: 0.89606
+run: 0, epoch: 0, iteration: 1000, train accuracy: 0.9, validation accuracy: 0.896596
+run: 0, epoch: 0, iteration: 1100, train accuracy: 0.89, validation accuracy: 0.895983
+run: 0, epoch: 0, iteration: 1200, train accuracy: 0.87, validation accuracy: 0.899162
+run: 0, epoch: 0, iteration: 1300, train accuracy: 0.91, validation accuracy: 0.890583
+run: 0, epoch: 0, iteration: 1400, train accuracy: 0.92, validation accuracy: 0.900732
+run: 0, epoch: 0, iteration: 1500, train accuracy: 0.97, validation accuracy: 0.898626
+run: 0, epoch: 0, iteration: 1600, train accuracy: 0.89, validation accuracy: 0.901575
+run: 0, epoch: 0, iteration: 1700, train accuracy: 0.93, validation accuracy: 0.901575
+run: 0, epoch: 0, iteration: 1800, train accuracy: 0.89, validation accuracy: 0.902149
+run: 0, epoch: 0, iteration: 1900, train accuracy: 0.95, validation accuracy: 0.901345
+run: 0, epoch: 0, iteration: 2000, train accuracy: 0.88, validation accuracy: 0.902877
+run: 0, epoch: 0, iteration: 2100, train accuracy: 0.84, validation accuracy: 0.891158
+run: 0, epoch: 0, iteration: 2200, train accuracy: 0.94, validation accuracy: 0.902685
+run: 0, epoch: 0, iteration: 2300, train accuracy: 0.88, validation accuracy: 0.904371
+run: 0, epoch: 0, iteration: 2400, train accuracy: 0.86, validation accuracy: 0.891962
+run: 0, epoch: 0, iteration: 2500, train accuracy: 0.9, validation accuracy: 0.90257
+run: 0, epoch: 0, iteration: 2600, train accuracy: 0.92, validation accuracy: 0.902877
+run: 0, epoch: 0, iteration: 2700, train accuracy: 0.93, validation accuracy: 0.903834
+run: 0, epoch: 0, iteration: 2800, train accuracy: 0.88, validation accuracy: 0.897439
+run: 0, epoch: 0, iteration: 2900, train accuracy: 0.9, validation accuracy: 0.896443
+run: 0, epoch: 0, iteration: 3000, train accuracy: 0.91, validation accuracy: 0.886141
+run: 0, epoch: 0, iteration: 3100, train accuracy: 0.93, validation accuracy: 0.896941
+run: 0, epoch: 0, iteration: 3200, train accuracy: 0.95, validation accuracy: 0.90529
+run: 0, epoch: 0, iteration: 3300, train accuracy: 0.91, validation accuracy: 0.903413
+run: 0, epoch: 0, iteration: 3400, train accuracy: 0.87, validation accuracy: 0.901
+run: 0, epoch: 0, iteration: 3500, train accuracy: 0.88, validation accuracy: 0.904907
+run: 0, epoch: 0, iteration: 3600, train accuracy: 0.96, validation accuracy: 0.90483
+run: 0, epoch: 0, iteration: 3700, train accuracy: 0.88, validation accuracy: 0.878481
+run: 0, epoch: 0, iteration: 3800, train accuracy: 0.9, validation accuracy: 0.902379
+run: 0, epoch: 0, iteration: 3900, train accuracy: 0.91, validation accuracy: 0.905213
+run: 0, epoch: 0, iteration: 4000, train accuracy: 0.92, validation accuracy: 0.906822
+run: 0, epoch: 0, iteration: 4100, train accuracy: 0.93, validation accuracy: 0.906362
+run: 0, epoch: 1, iteration: 0, train accuracy: 0.83, validation accuracy: 0.891847
+run: 0, epoch: 1, iteration: 100, train accuracy: 0.93, validation accuracy: 0.904524
+run: 0, epoch: 1, iteration: 200, train accuracy: 0.9, validation accuracy: 0.906056
+run: 0, epoch: 1, iteration: 300, train accuracy: 0.84, validation accuracy: 0.890621
+run: 0, epoch: 1, iteration: 400, train accuracy: 0.93, validation accuracy: 0.895715
+run: 0, epoch: 1, iteration: 500, train accuracy: 0.96, validation accuracy: 0.902226
+run: 0, epoch: 1, iteration: 600, train accuracy: 0.89, validation accuracy: 0.904485
+run: 0, epoch: 1, iteration: 700, train accuracy: 0.89, validation accuracy: 0.90506
+run: 0, epoch: 1, iteration: 800, train accuracy: 0.87, validation accuracy: 0.901268
+run: 0, epoch: 1, iteration: 900, train accuracy: 0.92, validation accuracy: 0.904868
+run: 0, epoch: 1, iteration: 1000, train accuracy: 0.94, validation accuracy: 0.905903
+run: 0, epoch: 1, iteration: 1100, train accuracy: 0.91, validation accuracy: 0.905749
+run: 0, epoch: 1, iteration: 1200, train accuracy: 0.87, validation accuracy: 0.904524
+run: 0, epoch: 1, iteration: 1300, train accuracy: 0.9, validation accuracy: 0.900081
+run: 0, epoch: 1, iteration: 1400, train accuracy: 0.88, validation accuracy: 0.907051
+run: 0, epoch: 1, iteration: 1500, train accuracy: 0.9, validation accuracy: 0.906132
+run: 0, epoch: 1, iteration: 1600, train accuracy: 0.88, validation accuracy: 0.900656
+run: 0, epoch: 1, iteration: 1700, train accuracy: 0.91, validation accuracy: 0.905596
+run: 0, epoch: 1, iteration: 1800, train accuracy: 0.89, validation accuracy: 0.906362
+run: 0, epoch: 1, iteration: 1900, train accuracy: 0.89, validation accuracy: 0.905519
+run: 0, epoch: 1, iteration: 2000, train accuracy: 0.92, validation accuracy: 0.886792
+run: 0, epoch: 1, iteration: 2100, train accuracy: 0.94, validation accuracy: 0.904639
+run: 0, epoch: 1, iteration: 2200, train accuracy: 0.9, validation accuracy: 0.899928
+run: 0, epoch: 1, iteration: 2300, train accuracy: 0.87, validation accuracy: 0.904639
+run: 0, epoch: 1, iteration: 2400, train accuracy: 0.85, validation accuracy: 0.90617
+run: 0, epoch: 1, iteration: 2500, train accuracy: 0.9, validation accuracy: 0.905328
+run: 0, epoch: 1, iteration: 2600, train accuracy: 0.91, validation accuracy: 0.904179
+run: 0, epoch: 1, iteration: 2700, train accuracy: 0.92, validation accuracy: 0.906515
+run: 0, epoch: 1, iteration: 2800, train accuracy: 0.91, validation accuracy: 0.9082
+run: 0, epoch: 1, iteration: 2900, train accuracy: 0.87, validation accuracy: 0.904294
+run: 0, epoch: 1, iteration: 3000, train accuracy: 0.94, validation accuracy: 0.899277
+run: 0, epoch: 1, iteration: 3100, train accuracy: 0.9, validation accuracy: 0.905098
+run: 0, epoch: 1, iteration: 3200, train accuracy: 0.95, validation accuracy: 0.904792
+run: 0, epoch: 1, iteration: 3300, train accuracy: 0.87, validation accuracy: 0.905519
+run: 0, epoch: 1, iteration: 3400, train accuracy: 0.89, validation accuracy: 0.900081
+run: 0, epoch: 1, iteration: 3500, train accuracy: 0.89, validation accuracy: 0.904715
+run: 0, epoch: 1, iteration: 3600, train accuracy: 0.92, validation accuracy: 0.907856
+run: 0, epoch: 1, iteration: 3700, train accuracy: 0.89, validation accuracy: 0.905826
+run: 0, epoch: 1, iteration: 3800, train accuracy: 0.92, validation accuracy: 0.902685
+run: 0, epoch: 1, iteration: 3900, train accuracy: 0.87, validation accuracy: 0.902379
+run: 0, epoch: 1, iteration: 4000, train accuracy: 0.94, validation accuracy: 0.906439
+run: 0, epoch: 1, iteration: 4100, train accuracy: 0.91, validation accuracy: 0.907319
+run: 0, epoch: 2, iteration: 0, train accuracy: 0.88, validation accuracy: 0.905405
+run: 0, epoch: 2, iteration: 100, train accuracy: 0.91, validation accuracy: 0.906132
+run: 0, epoch: 2, iteration: 200, train accuracy: 0.88, validation accuracy: 0.905328
+run: 0, epoch: 2, iteration: 300, train accuracy: 0.95, validation accuracy: 0.905941
+run: 0, epoch: 2, iteration: 400, train accuracy: 0.85, validation accuracy: 0.905941
+run: 0, epoch: 2, iteration: 500, train accuracy: 0.93, validation accuracy: 0.906056
+run: 0, epoch: 2, iteration: 600, train accuracy: 0.89, validation accuracy: 0.907511
+run: 0, epoch: 2, iteration: 700, train accuracy: 0.86, validation accuracy: 0.903107
+run: 0, epoch: 2, iteration: 800, train accuracy: 0.93, validation accuracy: 0.906324
+run: 0, epoch: 2, iteration: 900, train accuracy: 0.93, validation accuracy: 0.908966
+run: 0, epoch: 2, iteration: 1000, train accuracy: 0.93, validation accuracy: 0.907128
+run: 0, epoch: 2, iteration: 1100, train accuracy: 0.91, validation accuracy: 0.905673
+run: 0, epoch: 2, iteration: 1200, train accuracy: 0.9, validation accuracy: 0.907817
+run: 0, epoch: 2, iteration: 1300, train accuracy: 0.95, validation accuracy: 0.900962
+run: 0, epoch: 2, iteration: 1400, train accuracy: 0.91, validation accuracy: 0.907626
+run: 0, epoch: 2, iteration: 1500, train accuracy: 0.85, validation accuracy: 0.906439
+run: 0, epoch: 2, iteration: 1600, train accuracy: 0.9, validation accuracy: 0.909732
+run: 0, epoch: 2, iteration: 1700, train accuracy: 0.92, validation accuracy: 0.909311
+run: 0, epoch: 2, iteration: 1800, train accuracy: 0.93, validation accuracy: 0.90437
+run: 0, epoch: 2, iteration: 1900, train accuracy: 0.93, validation accuracy: 0.9028
+run: 0, epoch: 2, iteration: 2000, train accuracy: 0.95, validation accuracy: 0.907013
+run: 0, epoch: 2, iteration: 2100, train accuracy: 0.88, validation accuracy: 0.898626
+run: 0, epoch: 2, iteration: 2200, train accuracy: 0.93, validation accuracy: 0.899239
+run: 0, epoch: 2, iteration: 2300, train accuracy: 0.94, validation accuracy: 0.903145
+run: 0, epoch: 2, iteration: 2400, train accuracy: 0.89, validation accuracy: 0.908277
+run: 0, epoch: 2, iteration: 2500, train accuracy: 0.97, validation accuracy: 0.907281
+run: 0, epoch: 2, iteration: 2600, train accuracy: 0.93, validation accuracy: 0.904677
+run: 0, epoch: 2, iteration: 2700, train accuracy: 0.92, validation accuracy: 0.902609
+run: 0, epoch: 2, iteration: 2800, train accuracy: 0.9, validation accuracy: 0.904026
+run: 0, epoch: 2, iteration: 2900, train accuracy: 0.94, validation accuracy: 0.90843
+run: 0, epoch: 2, iteration: 3000, train accuracy: 0.94, validation accuracy: 0.908009
+run: 0, epoch: 2, iteration: 3100, train accuracy: 0.87, validation accuracy: 0.906975
+run: 0, epoch: 2, iteration: 3200, train accuracy: 0.92, validation accuracy: 0.906592
+run: 0, epoch: 2, iteration: 3300, train accuracy: 0.92, validation accuracy: 0.909119
+run: 0, epoch: 2, iteration: 3400, train accuracy: 0.94, validation accuracy: 0.910728
+run: 0, epoch: 2, iteration: 3500, train accuracy: 0.89, validation accuracy: 0.90866
+run: 0, epoch: 2, iteration: 3600, train accuracy: 0.87, validation accuracy: 0.908239
+run: 0, epoch: 2, iteration: 3700, train accuracy: 0.91, validation accuracy: 0.903375
+run: 0, epoch: 2, iteration: 3800, train accuracy: 0.92, validation accuracy: 0.91

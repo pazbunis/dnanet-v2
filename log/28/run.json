@@ -1,0 +1,110 @@
+{
+  "artifacts": [],
+  "command": "run_experiment",
+  "experiment": {
+    "base_dir": "/cs/cbio/paz/dev/projects/dnanet-v2",
+    "dependencies": [
+      "numpy==1.13.1",
+      "posixpath==<unknown>",
+      "sacred==0.7.0",
+      "tensorflow==1.2.0"
+    ],
+    "mainfile": "train.py",
+    "name": "train",
+    "repositories": [],
+    "sources": [
+      [
+        "enhancersdata.py",
+        "_sources/enhancersdata_21346ea0c0237f911553d568304f39ef.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_5156056c457bb7ef163bc92d130aedf4.py"
+      ]
+    ]
+  },
+  "heartbeat": "2017-09-10T12:43:01.441750",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz",
+    "hostname": "cortex-07",
+    "os": [
+      "Linux",
+      "Linux-4.8.4-aufs-1-x86_64-with-debian-stretch-sid"
+    ],
+    "python_version": "3.5.2+"
+  },
+  "meta": {
+    "command": "run_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_validation.npy",
+      "log/_resources/Y_bin_validation_7532c8aeacdb04c4d7cf8a94b10e4329.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_test.npy",
+      "log/_resources/Y_bin_test_319da86abc8f1a8a0a8e468127194208.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_test.npy",
+      "log/_resources/X_bin_test_813a6e13cf44c5b9861b180317b33dda.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/README",
+      "log/_resources/README_4442534507ce3c1f98eecd1c4c600203"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_validation.npy",
+      "log/_resources/headers_validation_43f1f7dfdb14fd2fac0caded91f8076c.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_train.npy",
+      "log/_resources/X_bin_train_1e85a93afbe6b8a13988abd5761f4a45.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/Y_bin_train.npy",
+      "log/_resources/Y_bin_train_d821eb703f8bd66e39e64b1c405cfe78.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_train.npy",
+      "log/_resources/headers_train_a12e1b99ff20a3db47d2362469e287f5.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/X_bin_validation.npy",
+      "log/_resources/X_bin_validation_00a104c906beb75d43addf9a60ae5847.npy"
+    ],
+    [
+      "/cs/grad/pazbu/paz/dev/projects/dnanet-v2/data/headers_test.npy",
+      "log/_resources/headers_test_e4aa8fba401bd8f3d13d986ea37c415a.npy"
+    ]
+  ],
+  "result": null,
+  "start_time": "2017-09-10T12:41:48.649783",
+  "status": "COMPLETED",
+  "stop_time": "2017-09-10T12:43:01.440465"
+}

@@ -1,0 +1,78 @@
+INFO - train - Running command 'run_experiment'
+INFO - train - Started run with ID "28"
+INFO:tensorflow:Summary name conv1/kernel:0 is illegal; using conv1/kernel_0 instead.
+INFO - tensorflow - Summary name conv1/kernel:0 is illegal; using conv1/kernel_0 instead.
+INFO:tensorflow:Summary name conv1/bias:0 is illegal; using conv1/bias_0 instead.
+INFO - tensorflow - Summary name conv1/bias:0 is illegal; using conv1/bias_0 instead.
+INFO:tensorflow:Summary name batch_normalization/beta:0 is illegal; using batch_normalization/beta_0 instead.
+INFO - tensorflow - Summary name batch_normalization/beta:0 is illegal; using batch_normalization/beta_0 instead.
+INFO:tensorflow:Summary name batch_normalization/gamma:0 is illegal; using batch_normalization/gamma_0 instead.
+INFO - tensorflow - Summary name batch_normalization/gamma:0 is illegal; using batch_normalization/gamma_0 instead.
+INFO:tensorflow:Summary name conv2/kernel:0 is illegal; using conv2/kernel_0 instead.
+INFO - tensorflow - Summary name conv2/kernel:0 is illegal; using conv2/kernel_0 instead.
+INFO:tensorflow:Summary name conv2/bias:0 is illegal; using conv2/bias_0 instead.
+INFO - tensorflow - Summary name conv2/bias:0 is illegal; using conv2/bias_0 instead.
+INFO:tensorflow:Summary name conv3/kernel:0 is illegal; using conv3/kernel_0 instead.
+INFO - tensorflow - Summary name conv3/kernel:0 is illegal; using conv3/kernel_0 instead.
+INFO:tensorflow:Summary name conv3/bias:0 is illegal; using conv3/bias_0 instead.
+INFO - tensorflow - Summary name conv3/bias:0 is illegal; using conv3/bias_0 instead.
+INFO:tensorflow:Summary name dense1/kernel:0 is illegal; using dense1/kernel_0 instead.
+INFO - tensorflow - Summary name dense1/kernel:0 is illegal; using dense1/kernel_0 instead.
+INFO:tensorflow:Summary name dense1/bias:0 is illegal; using dense1/bias_0 instead.
+INFO - tensorflow - Summary name dense1/bias:0 is illegal; using dense1/bias_0 instead.
+INFO:tensorflow:Summary name dense_out/kernel:0 is illegal; using dense_out/kernel_0 instead.
+INFO - tensorflow - Summary name dense_out/kernel:0 is illegal; using dense_out/kernel_0 instead.
+INFO:tensorflow:Summary name dense_out/bias:0 is illegal; using dense_out/bias_0 instead.
+INFO - tensorflow - Summary name dense_out/bias:0 is illegal; using dense_out/bias_0 instead.
+2017-09-10 15:41:57.382389: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla M60
+major: 5 minor: 2 memoryClockRate (GHz) 1.1775
+pciBusID 0000:8b:00.0
+Total memory: 7.93GiB
+Free memory: 7.86GiB
+2017-09-10 15:41:57.382423: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-09-10 15:41:57.382433: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-09-10 15:41:57.382449: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:8b:00.0)
+run: 0, epoch: 0, iteration: 0, train accuracy: 0.63, validation accuracy: 0.668416
+run: 0, epoch: 0, iteration: 100, train accuracy: 0.92, validation accuracy: 0.882502
+run: 0, epoch: 0, iteration: 200, train accuracy: 0.86, validation accuracy: 0.88189
+run: 0, epoch: 0, iteration: 300, train accuracy: 0.88, validation accuracy: 0.893111
+run: 0, epoch: 0, iteration: 400, train accuracy: 0.94, validation accuracy: 0.894413
+run: 0, epoch: 0, iteration: 500, train accuracy: 0.85, validation accuracy: 0.890047
+run: 0, epoch: 0, iteration: 600, train accuracy: 0.9, validation accuracy: 0.893149
+run: 0, epoch: 0, iteration: 700, train accuracy: 0.88, validation accuracy: 0.899353
+run: 0, epoch: 0, iteration: 800, train accuracy: 0.92, validation accuracy: 0.894298
+run: 0, epoch: 0, iteration: 900, train accuracy: 0.88, validation accuracy: 0.900005
+run: 0, epoch: 0, iteration: 1000, train accuracy: 0.91, validation accuracy: 0.90169
+run: 0, epoch: 0, iteration: 1100, train accuracy: 0.88, validation accuracy: 0.901766
+run: 0, epoch: 0, iteration: 1200, train accuracy: 0.88, validation accuracy: 0.904102
+run: 0, epoch: 0, iteration: 1300, train accuracy: 0.91, validation accuracy: 0.892843
+run: 0, epoch: 0, iteration: 1400, train accuracy: 0.92, validation accuracy: 0.894911
+run: 0, epoch: 0, iteration: 1500, train accuracy: 0.97, validation accuracy: 0.897362
+run: 0, epoch: 0, iteration: 1600, train accuracy: 0.89, validation accuracy: 0.904064
+run: 0, epoch: 0, iteration: 1700, train accuracy: 0.94, validation accuracy: 0.906324
+run: 0, epoch: 0, iteration: 1800, train accuracy: 0.89, validation accuracy: 0.905634
+run: 0, epoch: 0, iteration: 1900, train accuracy: 0.95, validation accuracy: 0.904064
+run: 0, epoch: 0, iteration: 2000, train accuracy: 0.88, validation accuracy: 0.902762
+run: 0, epoch: 0, iteration: 2100, train accuracy: 0.84, validation accuracy: 0.887021
+run: 0, epoch: 0, iteration: 2200, train accuracy: 0.93, validation accuracy: 0.905673
+run: 0, epoch: 0, iteration: 2300, train accuracy: 0.89, validation accuracy: 0.906745
+run: 0, epoch: 0, iteration: 2400, train accuracy: 0.87, validation accuracy: 0.904141
+run: 0, epoch: 0, iteration: 2500, train accuracy: 0.9, validation accuracy: 0.909885
+run: 0, epoch: 0, iteration: 2600, train accuracy: 0.92, validation accuracy: 0.911341
+run: 0, epoch: 0, iteration: 2700, train accuracy: 0.94, validation accuracy: 0.91157
+run: 0, epoch: 0, iteration: 2800, train accuracy: 0.9, validation accuracy: 0.900273
+run: 0, epoch: 0, iteration: 2900, train accuracy: 0.93, validation accuracy: 0.910996
+run: 0, epoch: 0, iteration: 3000, train accuracy: 0.89, validation accuracy: 0.907319
+run: 0, epoch: 0, iteration: 3100, train accuracy: 0.92, validation accuracy: 0.898511
+run: 0, epoch: 0, iteration: 3200, train accuracy: 0.94, validation accuracy: 0.914022
+run: 0, epoch: 0, iteration: 3300, train accuracy: 0.92, validation accuracy: 0.91406
+run: 0, epoch: 0, iteration: 3400, train accuracy: 0.82, validation accuracy: 0.90529
+run: 0, epoch: 0, iteration: 3500, train accuracy: 0.9, validation accuracy: 0.912183
+run: 0, epoch: 0, iteration: 3600, train accuracy: 0.95, validation accuracy: 0.910728
+run: 0, epoch: 0, iteration: 3700, train accuracy: 0.92, validation accuracy: 0.903375
+run: 0, epoch: 0, iteration: 3800, train accuracy: 0.89, validation accuracy: 0.914366
+run: 0, epoch: 0, iteration: 3900, train accuracy: 0.91, validation accuracy: 0.915554
+run: 0, epoch: 0, iteration: 4000, train accuracy: 0.94, validation accuracy: 0.914137
+run: 0, epoch: 0, iteration: 4100, train accuracy: 0.92, validation accuracy: 0.915324
+INFO - train - Completed after 0:01:13

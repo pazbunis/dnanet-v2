@@ -1,0 +1,31 @@
+INFO - train - Running command 'run_experiment'
+INFO - train - Started run with ID "54"
+INFO:tensorflow:Summary name conv1/kernel:0 is illegal; using conv1/kernel_0 instead.
+INFO - tensorflow - Summary name conv1/kernel:0 is illegal; using conv1/kernel_0 instead.
+INFO:tensorflow:Summary name conv1/bias:0 is illegal; using conv1/bias_0 instead.
+INFO - tensorflow - Summary name conv1/bias:0 is illegal; using conv1/bias_0 instead.
+INFO:tensorflow:Summary name conv2/kernel:0 is illegal; using conv2/kernel_0 instead.
+INFO - tensorflow - Summary name conv2/kernel:0 is illegal; using conv2/kernel_0 instead.
+INFO:tensorflow:Summary name conv2/bias:0 is illegal; using conv2/bias_0 instead.
+INFO - tensorflow - Summary name conv2/bias:0 is illegal; using conv2/bias_0 instead.
+INFO:tensorflow:Summary name conv3/kernel:0 is illegal; using conv3/kernel_0 instead.
+INFO - tensorflow - Summary name conv3/kernel:0 is illegal; using conv3/kernel_0 instead.
+INFO:tensorflow:Summary name conv3/bias:0 is illegal; using conv3/bias_0 instead.
+INFO - tensorflow - Summary name conv3/bias:0 is illegal; using conv3/bias_0 instead.
+INFO:tensorflow:Summary name dense1/kernel:0 is illegal; using dense1/kernel_0 instead.
+INFO - tensorflow - Summary name dense1/kernel:0 is illegal; using dense1/kernel_0 instead.
+INFO:tensorflow:Summary name dense1/bias:0 is illegal; using dense1/bias_0 instead.
+INFO - tensorflow - Summary name dense1/bias:0 is illegal; using dense1/bias_0 instead.
+INFO:tensorflow:Summary name dense_out/kernel:0 is illegal; using dense_out/kernel_0 instead.
+INFO - tensorflow - Summary name dense_out/kernel:0 is illegal; using dense_out/kernel_0 instead.
+INFO:tensorflow:Summary name dense_out/bias:0 is illegal; using dense_out/bias_0 instead.
+INFO - tensorflow - Summary name dense_out/bias:0 is illegal; using dense_out/bias_0 instead.
+2017-09-10 18:22:36.553675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla M60
+major: 5 minor: 2 memoryClockRate (GHz) 1.1775
+pciBusID 0000:87:00.0
+Total memory: 7.93GiB
+Free memory: 7.86GiB
+2017-09-10 18:22:36.553725: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-09-10 18:22:36.553734: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-09-10 18:22:36.553750: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:87:00.0)

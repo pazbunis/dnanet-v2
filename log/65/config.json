@@ -1,0 +1,47 @@
+{
+  "conv1_cfg": {
+    "filter_size": [
+      4,
+      15
+    ],
+    "num_filters": 64
+  },
+  "conv2_cfg": {
+    "filter_size": [
+      1,
+      5
+    ],
+    "num_filters": 32
+  },
+  "conv3_cfg": {
+    "filter_size": [
+      1,
+      5
+    ],
+    "num_filters": 32
+  },
+  "dense1_cfg": {
+    "size": 100
+  },
+  "dropout_keep_prob": 0.5,
+  "general_cfg": {
+    "batch_size": 100,
+    "num_epochs": 60,
+    "num_outs": 2,
+    "num_runs": 25,
+    "seq_length": 1000
+  },
+  "pool1_cfg": {
+    "kernel_size": 10,
+    "stride": 10
+  },
+  "pool2_cfg": {
+    "kernel_size": 3,
+    "stride": 3
+  },
+  "pool3_cfg": {
+    "kernel_size": 3,
+    "stride": 3
+  },
+  "seed": 433058768
+}

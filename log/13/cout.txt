@@ -1,0 +1,50 @@
+INFO - train - Running command 'run_experiment'
+INFO - train - Started run with ID "13"
+2017-09-10 13:05:57.758501: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla M60
+major: 5 minor: 2 memoryClockRate (GHz) 1.1775
+pciBusID 0000:87:00.0
+Total memory: 7.93GiB
+Free memory: 7.86GiB
+2017-09-10 13:05:57.758552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-09-10 13:05:57.758560: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-09-10 13:05:57.758576: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:87:00.0)
+run, epoch, step, training accuracy, validation accuracy
+run: 0, epoch: 0, iteration: 0, train accuracy: 0.37, validation accuracy: 0.331661
+run: 0, epoch: 0, iteration: 100, train accuracy: 0.92, validation accuracy: 0.8884
+run: 0, epoch: 0, iteration: 200, train accuracy: 0.9, validation accuracy: 0.893532
+run: 0, epoch: 0, iteration: 300, train accuracy: 0.9, validation accuracy: 0.895332
+run: 0, epoch: 0, iteration: 400, train accuracy: 0.91, validation accuracy: 0.893187
+run: 0, epoch: 0, iteration: 500, train accuracy: 0.86, validation accuracy: 0.894221
+run: 0, epoch: 0, iteration: 600, train accuracy: 0.89, validation accuracy: 0.882273
+run: 0, epoch: 0, iteration: 700, train accuracy: 0.88, validation accuracy: 0.898549
+run: 0, epoch: 0, iteration: 800, train accuracy: 0.93, validation accuracy: 0.876834
+run: 0, epoch: 0, iteration: 900, train accuracy: 0.87, validation accuracy: 0.897668
+run: 0, epoch: 0, iteration: 1000, train accuracy: 0.91, validation accuracy: 0.896175
+run: 0, epoch: 0, iteration: 1100, train accuracy: 0.88, validation accuracy: 0.897362
+run: 0, epoch: 0, iteration: 1200, train accuracy: 0.87, validation accuracy: 0.897936
+run: 0, epoch: 0, iteration: 1300, train accuracy: 0.92, validation accuracy: 0.886677
+run: 0, epoch: 0, iteration: 1400, train accuracy: 0.91, validation accuracy: 0.89943
+run: 0, epoch: 0, iteration: 1500, train accuracy: 0.97, validation accuracy: 0.896673
+run: 0, epoch: 0, iteration: 1600, train accuracy: 0.86, validation accuracy: 0.900656
+run: 0, epoch: 0, iteration: 1700, train accuracy: 0.94, validation accuracy: 0.902877
+run: 0, epoch: 0, iteration: 1800, train accuracy: 0.86, validation accuracy: 0.895485
+run: 0, epoch: 0, iteration: 1900, train accuracy: 0.94, validation accuracy: 0.898932
+run: 0, epoch: 0, iteration: 2000, train accuracy: 0.88, validation accuracy: 0.900388
+run: 0, epoch: 0, iteration: 2100, train accuracy: 0.82, validation accuracy: 0.876796
+run: 0, epoch: 0, iteration: 2200, train accuracy: 0.94, validation accuracy: 0.904409
+run: 0, epoch: 0, iteration: 2300, train accuracy: 0.9, validation accuracy: 0.905251
+run: 0, epoch: 0, iteration: 2400, train accuracy: 0.89, validation accuracy: 0.897477
+run: 0, epoch: 0, iteration: 2500, train accuracy: 0.9, validation accuracy: 0.902494
+run: 0, epoch: 0, iteration: 2600, train accuracy: 0.91, validation accuracy: 0.903566
+run: 0, epoch: 0, iteration: 2700, train accuracy: 0.95, validation accuracy: 0.905481
+run: 0, epoch: 0, iteration: 2800, train accuracy: 0.88, validation accuracy: 0.897936
+run: 0, epoch: 0, iteration: 2900, train accuracy: 0.91, validation accuracy: 0.894375
+run: 0, epoch: 0, iteration: 3000, train accuracy: 0.89, validation accuracy: 0.900273
+run: 0, epoch: 0, iteration: 3100, train accuracy: 0.91, validation accuracy: 0.892307
+run: 0, epoch: 0, iteration: 3200, train accuracy: 0.91, validation accuracy: 0.905941
+run: 0, epoch: 0, iteration: 3300, train accuracy: 0.93, validation accuracy: 0.906783
+run: 0, epoch: 0, iteration: 3400, train accuracy: 0.87, validation accuracy: 0.899047
+run: 0, epoch: 0, iteration: 3500, train accuracy: 0.86, validation accuracy: 0.905098
+run: 0, epoch: 0, iteration: 3600, train accuracy: 0.93, validation accuracy: 0.90437
+run: 0, epoch: 0, iteration: 3700, train accuracy: 0.89, validation accuracy: 0.881124
